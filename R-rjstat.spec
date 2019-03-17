@@ -4,18 +4,23 @@
 #
 Name     : R-rjstat
 Version  : 0.3.0
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Summary  : Read and Write 'JSON-stat' Data Sets
 Group    : Development/Tools
 License  : MIT
-Requires: R-checkmate
-Requires: R-jsonlite
-Requires: R-rlang
+Requires: R-assertthat
+Requires: R-backports
+Requires: R-cli
+Requires: R-withr
+BuildRequires : R-assertthat
+BuildRequires : R-backports
 BuildRequires : R-checkmate
+BuildRequires : R-cli
 BuildRequires : R-jsonlite
 BuildRequires : R-rlang
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
@@ -30,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548006786
+export SOURCE_DATE_EPOCH=1552845502
 
 %install
-export SOURCE_DATE_EPOCH=1548006786
+export SOURCE_DATE_EPOCH=1552845502
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library rjstat|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  rjstat || :
 
 
 %files
@@ -95,3 +99,16 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/rjstat/help/rjstat.rdx
 /usr/lib64/R/library/rjstat/html/00Index.html
 /usr/lib64/R/library/rjstat/html/R.css
+/usr/lib64/R/library/rjstat/tests/testthat.R
+/usr/lib64/R/library/rjstat/tests/testthat/bundle.json
+/usr/lib64/R/library/rjstat/tests/testthat/collection.json
+/usr/lib64/R/library/rjstat/tests/testthat/dataset.json
+/usr/lib64/R/library/rjstat/tests/testthat/nonexistent.json
+/usr/lib64/R/library/rjstat/tests/testthat/test-classes.R
+/usr/lib64/R/library/rjstat/tests/testthat/test-columns.R
+/usr/lib64/R/library/rjstat/tests/testthat/test-datasets.R
+/usr/lib64/R/library/rjstat/tests/testthat/test-factors.R
+/usr/lib64/R/library/rjstat/tests/testthat/test-input.R
+/usr/lib64/R/library/rjstat/tests/testthat/test-output.R
+/usr/lib64/R/library/rjstat/tests/testthat/test-values.R
+/usr/lib64/R/library/rjstat/tests/testthat/test-warnings.R
