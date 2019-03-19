@@ -4,7 +4,7 @@
 #
 Name     : R-rjstat
 Version  : 0.3.0
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Summary  : Read and Write 'JSON-stat' Data Sets
@@ -31,10 +31,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552866469
+export SOURCE_DATE_EPOCH=1552962733
 
 %install
-export SOURCE_DATE_EPOCH=1552866469
+export SOURCE_DATE_EPOCH=1552962733
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
