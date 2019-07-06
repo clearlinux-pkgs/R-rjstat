@@ -4,7 +4,7 @@
 #
 Name     : R-rjstat
 Version  : 0.3.0
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Summary  : Read and Write 'JSON-stat' Data Sets
