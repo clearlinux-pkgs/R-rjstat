@@ -4,24 +4,21 @@
 #
 Name     : R-rjstat
 Version  : 0.3.0
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Summary  : Read and Write 'JSON-stat' Data Sets
 Group    : Development/Tools
 License  : MIT
-BuildRequires : R-assertthat
-BuildRequires : R-backports
+Requires: R-checkmate
+Requires: R-jsonlite
 BuildRequires : R-checkmate
-BuildRequires : R-cli
 BuildRequires : R-jsonlite
-BuildRequires : R-rlang
-BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
-# rjstat: read and write JSON-stat with R
-[![Build Status](https://travis-ci.org/ajschumacher/rjstat.svg)](https://travis-ci.org/ajschumacher/rjstat)
+from (lists of) R data frames. Not all features are supported, especially
+    the extensive metadata features of 'JSON-stat'.
 
 %prep
 %setup -q -c -n rjstat
@@ -30,13 +27,13 @@ BuildRequires : buildreq-R
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552962733
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569371622
 
 %install
-export SOURCE_DATE_EPOCH=1552962733
+export SOURCE_DATE_EPOCH=1569371622
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -65,12 +62,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  rjstat || :
+R CMD check --no-manual --no-examples --no-codoc rjstat || :
 
 
 %files
