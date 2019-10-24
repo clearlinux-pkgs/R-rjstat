@@ -4,7 +4,7 @@
 #
 Name     : R-rjstat
 Version  : 0.3.0
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjstat_0.3.0.tar.gz
 Summary  : Read and Write 'JSON-stat' Data Sets
@@ -15,10 +15,11 @@ Requires: R-jsonlite
 BuildRequires : R-checkmate
 BuildRequires : R-jsonlite
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-from (lists of) R data frames. Not all features are supported, especially
-    the extensive metadata features of 'JSON-stat'.
+# rjstat: read and write JSON-stat with R
+[![Build Status](https://travis-ci.org/ajschumacher/rjstat.svg)](https://travis-ci.org/ajschumacher/rjstat)
 
 %prep
 %setup -q -c -n rjstat
@@ -28,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569371622
+export SOURCE_DATE_EPOCH=1571891407
 
 %install
-export SOURCE_DATE_EPOCH=1569371622
+export SOURCE_DATE_EPOCH=1571891407
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
