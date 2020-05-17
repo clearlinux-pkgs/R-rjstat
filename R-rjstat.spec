@@ -4,7 +4,7 @@
 #
 Name     : R-rjstat
 Version  : 0.4.1
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/rjstat_0.4.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjstat_0.4.1.tar.gz
 Summary  : Handle 'JSON-stat' Format in R
@@ -17,27 +17,27 @@ BuildRequires : R-jsonlite
 BuildRequires : buildreq-R
 
 %description
-# rjstat: read and write JSON-stat with R
-[![Build Status](https://travis-ci.org/ajschumacher/rjstat.svg)](https://travis-ci.org/ajschumacher/rjstat) [![Coverage Status](https://coveralls.io/repos/MansMeg/rjstat/badge.svg)](https://coveralls.io/r/MansMeg/rjstat) [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/rjstat)](https://github.com/metacran/cranlogs.app)
-[![cran version](https://www.r-pkg.org/badges/version/rjstat)](https://CRAN.R-project.org/package=rjstat)
+Not all features are supported, especially the extensive metadata
+    features of 'JSON-stat'.
 
 %prep
 %setup -q -c -n rjstat
+cd %{_builddir}/rjstat
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1584894676
+export SOURCE_DATE_EPOCH=1589758619
 
 %install
-export SOURCE_DATE_EPOCH=1584894676
+export SOURCE_DATE_EPOCH=1589758619
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
