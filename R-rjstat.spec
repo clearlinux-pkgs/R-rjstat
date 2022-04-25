@@ -4,7 +4,7 @@
 #
 Name     : R-rjstat
 Version  : 0.4.2
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/rjstat_0.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjstat_0.4.2.tar.gz
 Summary  : Handle 'JSON-stat' Format in R
